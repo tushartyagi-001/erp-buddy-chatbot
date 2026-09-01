@@ -49,6 +49,18 @@ uvicorn app.main:app --host 127.0.0.1 --port 8010 --reload
 - Fee / attendance / exam / enquiry — alag menu permission
 - Bina access ke user-friendly message, data nahi
 
+## Deploy (Render)
+
+1. Render → **New Web Service** → connect GitHub repo
+2. **Start Command** (important — default galat hai):
+   ```
+   uvicorn app.main:app --host 0.0.0.0 --port $PORT
+   ```
+3. **Environment** mein `.env.example` wale secrets set karo (GEMINI_API_KEY, DB_*, JWT_SECRET, CORS_ORIGINS)
+4. Deploy → URL: `https://erp-buddy-chatbot.onrender.com/health`
+
+Repo mein `render.yaml` hai — agar Blueprint se deploy karo to start command auto set ho jayega.
+
 ## Deploy (SmarterASP)
 
 ```powershell
