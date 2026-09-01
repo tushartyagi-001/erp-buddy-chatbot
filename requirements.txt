@@ -1,0 +1,13 @@
+fastapi
+uvicorn[standard]
+pydantic
+pydantic-settings
+python-dotenv
+pymssql
+PyJWT
+langchain
+langchain-core
+langchain-openai
+langchain-google-genai
+langgraph
+openpyxl
