@@ -1,4 +1,4 @@
-# ERP Buddy Chatbot — Step 2 (Phase 2)
+# ERP Buddy Chatbot
 
 College ERP ke liye LangChain chatbot — read-only, role/branch scoped.
 
@@ -48,3 +48,22 @@ uvicorn app.main:app --host 127.0.0.1 --port 8010 --reload
 - Super admin / head branch bypass
 - Fee / attendance / exam / enquiry — alag menu permission
 - Bina access ke user-friendly message, data nahi
+
+## Deploy (SmarterASP)
+
+```powershell
+.\deploy\deploy.ps1
+.\deploy\deploy.ps1 -SkipPackages   # upload only, after first build
+```
+
+## Chat limit reset API
+
+```http
+POST /api/chat-limit/reset
+Authorization: Bearer <JWT>
+Content-Type: application/json
+
+{"scope": "user"}
+```
+
+Optional dev header: `X-Chat-Limit-Key` (set `CHAT_LIMIT_ADMIN_KEY` in `.env`).
